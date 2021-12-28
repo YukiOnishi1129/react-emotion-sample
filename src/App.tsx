@@ -1,26 +1,52 @@
+/** @jsxImportSource @emotion/react */
+import emotionReset from 'emotion-reset'
 import React from 'react'
-import logo from './logo.svg'
-import './App.css'
+import { Global, css } from '@emotion/react'
+import styled from '@emotion/styled'
 
-const App: React.VFC = () => {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+const color = 'white'
+
+const Button = styled.button`
+  padding: 32px;
+  background-color: hotpink;
+  font-size: 24px;
+  border-radius: 4px;
+  color: black;
+  font-weight: bold;
+  &:hover {
+    color: white;
+  }
+`
+
+const App: React.VFC = () => (
+  <>
+    <Global
+      styles={css`
+        ${emotionReset}
+
+        *, *::after, *::before {
+          box-sizing: border-box;
+          -moz-osx-font-smoothing: grayscale;
+          -webkit-font-smoothing: antialiased;
+          font-smoothing: antialiased;
+        }
+      `}
+    />
+    <div
+      css={css`
+        padding: 32px;
+        background-color: hotpink;
+        font-size: 24px;
+        border-radius: 4px;
+        &:hover {
+          color: ${color};
+        }
+      `}
+    >
+      Hover to change color.
     </div>
-  )
-}
+    <Button>This my button component.</Button>
+  </>
+)
 
 export default App
