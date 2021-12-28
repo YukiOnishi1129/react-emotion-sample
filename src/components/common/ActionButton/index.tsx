@@ -1,16 +1,17 @@
+/** @jsxImportSource @emotion/react */
 /**
  * ActionButton
  * @package components
  */
 import React from 'react'
-/* styled */
-import { _StyleButton } from './style'
+import { css } from '@emotion/react'
 
 /**
  * Props
  */
 export interface Props {
   label: string
+  disableFlg?: boolean
   onClick: () => void
 }
 
@@ -21,10 +22,32 @@ export interface Props {
  */
 export const ActionButton: React.VFC<Props> = (props: Props) => {
   /* props */
-  const { label, onClick } = props
+  const { label, disableFlg, onClick } = props
+
   return (
-    <_StyleButton role="test-action-button" onClick={onClick}>
+    <button css={disableFlg ? secondaryStyle : primaryStyle} onClick={onClick}>
       {label}
-    </_StyleButton>
+    </button>
   )
 }
+
+const baseStyle = css`
+  padding: 32px;
+  font-size: 24px;
+  border-radius: 4px;
+  color: black;
+  font-weight: bold;
+  &:hover {
+    color: white;
+  }
+`
+
+const primaryStyle = css`
+  ${baseStyle}
+  background-color: hotpink;
+`
+
+const secondaryStyle = css`
+  ${baseStyle}
+  background-color: black;
+`

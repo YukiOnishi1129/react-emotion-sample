@@ -17,9 +17,11 @@ const Template: Story<Props> = (args) => <ActionButton {...args} />
 export const Default = Template.bind({})
 Default.args = {
   label: 'first',
+  disableFlg: false,
 }
 
 export const Second = Template.bind({})
 Second.args = {
   label: 'second',
+  disableFlg: true,
 }
