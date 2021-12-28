@@ -25,7 +25,8 @@
   "plugins": ["@typescript-eslint", "react"],
   "rules": {
     "semi": 0,
-    "quotes": ["error", "single"]
+    "quotes": ["error", "single"],
+    "react/prop-types": "off"
   },
   "settings": { "react": { "version": "detect" } }
 }

@@ -2,21 +2,10 @@
 import emotionReset from 'emotion-reset'
 import React from 'react'
 import { Global, css } from '@emotion/react'
-import styled from '@emotion/styled'
+/* components */
+import { ActionButton } from './components/common/ActionButton'
 
 const color = 'white'
-
-const Button = styled.button`
-  padding: 32px;
-  background-color: hotpink;
-  font-size: 24px;
-  border-radius: 4px;
-  color: black;
-  font-weight: bold;
-  &:hover {
-    color: white;
-  }
-`
 
 const App: React.VFC = () => (
   <>
@@ -45,7 +34,7 @@ const App: React.VFC = () => (
     >
       Hover to change color.
     </div>
-    <Button>This my button component.</Button>
+    <ActionButton label={'This my button component.'} />
   </>
 )
 
