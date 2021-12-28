@@ -25,7 +25,11 @@ export const ActionButton: React.VFC<Props> = (props: Props) => {
   const { label, disableFlg, onClick } = props
 
   return (
-    <button css={disableFlg ? secondaryStyle : primaryStyle} onClick={onClick}>
+    <button
+      role="test-action-button"
+      css={disableFlg ? secondaryStyle : primaryStyle}
+      onClick={onClick}
+    >
       {label}
     </button>
   )
