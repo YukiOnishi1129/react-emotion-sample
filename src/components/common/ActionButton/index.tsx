@@ -9,7 +9,7 @@ import { _StyleButton } from './style'
 /**
  * Props
  */
-interface Props {
+export interface Props {
   label: string
 }
 
