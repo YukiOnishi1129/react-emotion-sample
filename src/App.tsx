@@ -1,11 +1,13 @@
 /** @jsxImportSource @emotion/react */
 import emotionReset from 'emotion-reset'
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
 import { Global, css } from '@emotion/react'
+/* pages */
+import { Home } from './pages/Home'
+import { About } from './pages/About'
 /* components */
 import { ActionButton } from './components/common/ActionButton'
-
-const color = 'white'
 
 const App: React.VFC = () => (
   <>
@@ -21,25 +23,17 @@ const App: React.VFC = () => (
         }
       `}
     />
-    <div
-      css={css`
-        padding: 32px;
-        background-color: hotpink;
-        font-size: 24px;
-        border-radius: 4px;
-        &:hover {
-          color: ${color};
-        }
-      `}
-    >
-      Hover to change color.
-    </div>
+
     <ActionButton
       label={'This my button component.'}
       onClick={() => {
         console.log('テスト')
       }}
     />
+    <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="about" element={<About />} />
+    </Routes>
   </>
 )
 
