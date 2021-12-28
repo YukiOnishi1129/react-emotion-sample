@@ -34,7 +34,12 @@ const App: React.VFC = () => (
     >
       Hover to change color.
     </div>
-    <ActionButton label={'This my button component.'} />
+    <ActionButton
+      label={'This my button component.'}
+      onClick={() => {
+        console.log('テスト')
+      }}
+    />
   </>
 )
 

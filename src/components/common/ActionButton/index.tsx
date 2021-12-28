@@ -11,6 +11,7 @@ import { _StyleButton } from './style'
  */
 export interface Props {
   label: string
+  onClick: () => void
 }
 
 /**
@@ -20,6 +21,10 @@ export interface Props {
  */
 export const ActionButton: React.VFC<Props> = (props: Props) => {
   /* props */
-  const { label } = props
-  return <_StyleButton>{label}</_StyleButton>
+  const { label, onClick } = props
+  return (
+    <_StyleButton role="test-action-button" onClick={onClick}>
+      {label}
+    </_StyleButton>
+  )
 }
